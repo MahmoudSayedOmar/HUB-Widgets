@@ -1,0 +1,111 @@
+@import "variables";
+
+%childcomponentheadermixin {
+  width: auto;
+  overflow: auto;
+  margin: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: $headerandfooter;
+}
+
+.headerlableENG {
+  padding-left: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  color: gray;
+}
+
+.headerlableAR {
+  padding-right: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  color: gray;
+}
+
+.mainbody {
+  width: 280px;
+  height: 300px;
+  background-color: $body;
+}
+
+.childcomponentheaderENG {
+  @extend %childcomponentheadermixin;
+
+  padding: 8px;
+  .inlineleft {
+    float: left;
+    height: 14px;
+  }
+  .inlineright {
+    height: 14px;
+    float: right;
+    .addlable {
+      color: $buttons;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+}
+
+.childcomponentheaderAR {
+  @extend %childcomponentheadermixin;
+
+  padding: 8px;
+  .inlineleft {
+    float: right;
+    height: 14px;
+  }
+  .inlineright {
+    height: 14px;
+    float: left;
+    .addlable {
+      color: $buttons;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+}
+
+.body {
+  width: auto;
+  height: auto;
+  overflow: auto;
+  padding: 5px;
+  margin: 2px;
+  background-color: $body;
+}
+
+.childcomponentfooter {
+  width: auto;
+  overflow: auto;
+  padding: 8px;
+  margin: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: $headerandfooter;
+}
+.customizedbuttonENG {
+  padding: 0;
+  border: none;
+  background: none;
+  height: 14px;
+  color: $buttons;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  float: left;
+  font-weight: bold;
+  padding-left: 10px;
+  position: relative;
+}
+.customizedbuttonAR {
+  padding: 0;
+  border: none;
+  background: none;
+  height: 14px;
+  color: $buttons;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  float: right;
+  font-weight: bold;
+  padding-left: 10px;
+  position: relative;
+}

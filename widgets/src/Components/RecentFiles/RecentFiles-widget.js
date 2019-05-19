@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./RecentFilesStyles.scss";
-import { from } from "rxjs";
 import languages from "../../Localization/Lang";
 import Images from "../../Assets/Files";
 
@@ -71,7 +70,8 @@ export class RecentFiles extends Component {
           </div>
         </header>
         <body className="body">
-          {this.state.files.map((file, key) => {
+          {
+          this.state.files.slice(0,3).map((file, key)=> {
             return (
               <div className="fileitem" key={key}>
                 <img src={Images[file.type]} className="filelogo" alt="logo" />
@@ -87,7 +87,11 @@ export class RecentFiles extends Component {
                 ? "customizedbuttonENG"
                 : "customizedbuttonAR"
             }
-          >
+            onClick={()=>{
+              debugger;
+              this.props.history.push("/seeall",{content:"All Recent Files"});
+            }}
+           >
             {languages.recentFiles["footerLable"][this.props.language]}
           </button>
         </footer>

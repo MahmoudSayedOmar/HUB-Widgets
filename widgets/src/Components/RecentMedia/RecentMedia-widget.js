@@ -70,7 +70,7 @@ export class RecentMedia extends Component {
           </div>
         </header>
         <body className="body">
-          {this.state.images.map((image, key) => {
+          {this.state.images.slice(Math.max(this.state.images.length - 5, 1)).map((image, key) => {
             return (
               <div
                 className="imageitem"
@@ -90,6 +90,8 @@ export class RecentMedia extends Component {
                 ? "customizedbuttonENG"
                 : "customizedbuttonAR"
             }
+            onClick={()=>{
+              this.props.history.push("/seeall",{content:"All Recent Media"});}}
           >
             {languages.recentMedia["footerLable"][this.props.language]}
           </button>

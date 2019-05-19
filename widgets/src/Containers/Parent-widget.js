@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { RecentFiles } from "../Components/RecentFiles/RecentFiles-widget";
 import { RecentMedia } from "../Components/RecentMedia/RecentMedia-widget";
 import { Switchlang } from "../Components/SwitchLang/SwitchLang-widget";
-export default class Mainwidget extends Component {
+import { withRouter } from "react-router";
+
+ class Mainwidget extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,15 +18,18 @@ export default class Mainwidget extends Component {
   }
 
   render() {
+    debugger;
+    console.log(this.props);
     return (
       <div
+      className="App"
         style={{
           width: "350px",
           height: "auto"
         }}
       >
-        <RecentFiles language={this.state.language} />
-        <RecentMedia language={this.state.language} />
+        <RecentFiles {...this.props} language={this.state.language} />
+        <RecentMedia {...this.props} language={this.state.language} />
         <Switchlang
           switchLanguage={this._switchLanguage.bind(this)}
           language={this.state.language}
@@ -33,3 +38,5 @@ export default class Mainwidget extends Component {
     );
   }
 }
+
+export default withRouter(Mainwidget);

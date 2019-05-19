@@ -6,7 +6,8 @@ let Images ={
     "pdf":pdf,
     "docx":docx,
     "ppt":ppt,
-    "pptx":ppt
+    "pptx":ppt,
+    "doc":docx,
 };
 
 export default Images;

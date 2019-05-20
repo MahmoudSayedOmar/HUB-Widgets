@@ -71,10 +71,11 @@ export class RecentFiles extends Component {
         </header>
         <body className="body">
           {
-          this.state.files.slice(0,3).map((file, key)=> {
+          this.state.files.reverse().slice(0,3).map((file, key)=> {
             return (
               <div className="fileitem" key={key}>
-                <img src={Images[file.type]} className="filelogo" alt="logo" />
+                <img src={Images[file.type]!==undefined?Images[file.type]:Images["otherFile"]} 
+                     className="filelogo" alt="logo" />
                 <label className="filelable">{file.name}</label>
               </div>
             );

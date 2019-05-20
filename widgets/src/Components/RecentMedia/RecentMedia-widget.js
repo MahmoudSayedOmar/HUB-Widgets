@@ -70,7 +70,7 @@ export class RecentMedia extends Component {
           </div>
         </header>
         <body className="body">
-          {this.state.images.slice(Math.max(this.state.images.length - 5, 1)).map((image, key) => {
+          {this.state.images.reverse().slice(0,5).map((image, key) => {
             return (
               <div
                 className="imageitem"
